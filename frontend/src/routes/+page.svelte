@@ -88,7 +88,7 @@
               <td>{h.source}</td>
               <td>{h.destination}</td>
               <td>{h.km}</td>
-              <td>{h.mi}</td>
+              <td>{h.mi}Test</td>
             </tr>
           {/each}
         </tbody>
