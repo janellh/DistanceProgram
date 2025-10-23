@@ -5,13 +5,13 @@
   export let href: string | null = null;
   export let icon: 'recently-viewed' | 'calculator' | null = 'recently-viewed';
 
-  export let width = 237;     // px
-  export let height = 48;     // px
-  export let padding = 3;     // px
-  export let radius = 0;      // px
+  export let width = 237;
+  export let height = 48;
+  export let padding = 3;
+  export let radius = 0;
 
-  export let bg = 'var(--Button-button-secondary, #313030)';  // default dark
-  export let fg = '#FFFFFF';                                   // text/icon color
+  export let bg = 'var(--Button-button-secondary, #313030)';
+  export let fg = '#FFFFFF';
   export let blend: CSSStyleDeclaration['backgroundBlendMode'] | string = 'normal';
 
   export let disabled = false;
@@ -31,12 +31,10 @@
 >
     <span class="label">{text}</span>
   {#if icon === 'recently-viewed'}
-    <!-- History/recents -->
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M13 3a9 9 0 1 0 8.66 6.5h-2.1a7 7 0 1 1-3.2-4.58l-1.96 1.96H21V2.82l-2.02 2.02A8.98 8.98 0 0 0 13 3Zm-1 4h2v6h-5v-2h3V7Z"/>
     </svg>
   {:else if icon === 'calculator'}
-    <!-- Calculator icon -->
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 4h10V5H7v2zm2 4H8v2h1v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2zM9 15H8v2h1v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2z"/>
     </svg>

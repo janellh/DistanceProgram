@@ -45,7 +45,6 @@
     }
 
     const result = (await r.json()) as DistanceResponse;
-
     const km = result.km;
     const mi = result.mi;
 
