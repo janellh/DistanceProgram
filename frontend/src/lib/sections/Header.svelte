@@ -41,13 +41,37 @@
 </div>
 
 <style>
-  .header-wrap { background:#F8F8F6; border-bottom:1px solid var(--border, #E5E7EB); }
-  .header{
-    display:flex; justify-content:space-between; align-items:center; gap:16px;
-    min-height:100px; padding:16px; box-sizing:border-box;
+  .header-wrap {
+    background:#F8F8F6;
+  }
+  .header {
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    gap:16px;
+    min-height:100px;
+    padding:16px;
+    box-sizing:border-box;
     font-family: Inter, system-ui, Arial, sans-serif;
   }
-  .headline{ display:grid; gap:8px; max-width:963px; }
-  .title{ margin:0; font-weight:300; font-size:32px; line-height:40px; color:#222222; }
-  .subtitle{ margin:0; font-weight:400; font-size:14px; line-height:20px; letter-spacing:.16px; color:#4B4949; }
+  .headline {
+    display:grid;
+    gap:8px;
+    max-width:963px;
+  }
+  .title {
+    margin:0;
+    font-weight:300;
+    font-size:32px;
+    line-height:40px;
+    color:#222222;
+  }
+  .subtitle {
+    margin:0;
+    font-weight:400;
+    font-size:14px;
+    line-height:20px;
+    letter-spacing:.16px;
+    color:#4B4949;
+  }
 </style>
