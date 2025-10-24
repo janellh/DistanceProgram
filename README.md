@@ -1,6 +1,7 @@
 # DistanceProgram
 ### Docker run 
 docker compose up --build
+
 http://localhost:8000
 
 # Project Information
@@ -37,7 +38,6 @@ Frontend and backend are decoupled but communicate via REST.
 | Variable | Description | Example |
 |-----------|--------------|----------|
 | `ENV` | Application environment | `production` |
-| `DATABASE_URL` | Set by Heroku Postgres | *(auto-injected)* |
 | `SQLALCHEMY_DATABASE_URL` | Normalized connection string | `postgresql+psycopg://...` |
 | `CORS_ORIGINS` | Allowed frontend origins | `https://distance-ui.vercel.app,http://localhost:5173` |
 | `SECRET_KEY` | For session/JWT signing | `your_secret_here` |
