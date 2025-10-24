@@ -31,7 +31,7 @@ RUN mkdir -p static
 COPY --from=fe /fe/build/ ./static/
 
 # Default envs (overridable via .env/host settings)
-ENV DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/distance \
+ENV DATABASE_URL=postgresql://distance_db_user:OvmvDY2sXiyPh5abNXdJjgFM04IloaT9@dpg-d3trn3juibrs73bc2kv0-a/distance_db
     NOMINATIM_UA=DistanceChallenge/1.0
 
 EXPOSE 8000
