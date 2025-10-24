@@ -34,4 +34,5 @@ ENV DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/distance \
     NOMINATIM_UA=DistanceChallenge/1.0
 
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+

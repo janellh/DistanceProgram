@@ -10,7 +10,7 @@ from ...utils import haversine_km
 router = APIRouter()
 
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
-UA = os.getenv("NOMINATIM_UA", "DistanceChallenge/1.0 (contact@example.com)")
+UA = os.getenv("NOMINATIM_UA", "DistanceChallenge/1.0 (janellhhaynes@gmail.com)")
 
 @router.post("/distance", response_model=DistanceResponse)
 async def distance(payload: DistanceRequest, db: Session = Depends(get_db)):

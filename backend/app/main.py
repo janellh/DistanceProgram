@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from .db import Base, engine
+from . import models
 from .api.v1.health import router as health_router
 from .api.v1.distance import router as distance_router
 from .api.v1.history import router as history_router
