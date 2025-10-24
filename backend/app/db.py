@@ -1,20 +1,13 @@
 import os
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
 
-DB_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql+psycopg2://postgres:postgres@localhost:5432/distance",
-)
+raw = os.getenv("SQLALCHEMY_DATABASE_URL") or os.getenv("DATABASE_URL", "")
 
-engine = create_engine(DB_URL, pool_pre_ping=True)
-SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
-Base = declarative_base()
+# Normalize Heroku scheme and ensure SSL
+if raw.startswith("postgres://"):
+    raw = raw.replace("postgres://", "postgresql+psycopg://", 1)
+if "sslmode=" not in raw:
+    sep = "&" if "?" in raw else "?"
+    raw = f"{raw}{sep}sslmode=require"
 
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+engine = create_engine(raw, pool_pre_ping=True)
