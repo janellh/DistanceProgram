@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { PUBLIC_API_BASE } from '$env/static/public';
-  const API_BASE: string = PUBLIC_API_BASE ?? '';
+import { env as publicEnv } from '$env/dynamic/public';
+const API_BASE = publicEnv.PUBLIC_API_BASE ?? '';
 
   type DistanceResponse = {
     km: number;

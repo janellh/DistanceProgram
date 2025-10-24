@@ -1,8 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { PUBLIC_API_BASE } from '$env/static/public';
-
-  const API_BASE = (PUBLIC_API_BASE ?? '').replace(/\/+$/, '');
+  import { env as publicEnv } from '$env/dynamic/public';
+  const API_BASE = publicEnv.PUBLIC_API_BASE ?? '';
 
   interface HistoryItem {
     id: number;
