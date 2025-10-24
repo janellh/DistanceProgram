@@ -1,8 +1,9 @@
 # ---------- Build frontend ----------
 FROM node:20-alpine AS fe
+RUN apk add --no-cache libc6-compat
 WORKDIR /fe
 COPY frontend/package.json frontend/package-lock.json* ./
-RUN npm ci || npm i
+RUN npm ci --include=dev || npm i --include=dev
 COPY frontend/ ./
 # SvelteKit + Vite build -> /fe/build (contains 200.html and _app/)
 RUN npm run build
